@@ -59,3 +59,26 @@ $segment = $regSegmentator->getSegment();
 ...
 
 ```
+
+Запись сегмента в оформленный заказ:
+
+```php
+
+<?php
+
+// ... где-то здесь получили order_id заказа
+$order_id = 123;
+
+// Добавляем сегмент к заказу
+// Считаем, что у заказа может быть несколько экспериментов, поэтому сегменты пишем в отдельную таблицу "order_segments"
+$recSegmentator = new ServerSideSegmentator('recommendations', 3);
+$segment = $regSegmentator->getSegment();
+if($segment) {
+	$query = "INSERT INTO order_segments (order_id, segment) VALUES (" . $order_id . ", '" . $segment . "');";
+	mysql_query($segment);
+}
+
+?>
+
+
+```
