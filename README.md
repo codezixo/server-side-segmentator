@@ -1,11 +1,12 @@
 # Сегментатор #
+
+`php 5.5+`
  
 ## Назначение ## 
 
 ## Установка ##
 
-1. Установить Redis версии 3
-2. Положить файл ServerSideSegmentator.php в папку с вашим проектом и подключить его
+1. Положить файл ServerSideSegmentator.php в папку с вашим проектом и подключить его
 
 ## Использование ##
 
@@ -14,14 +15,11 @@
 ```php
 <?php
 
-// Самая первая строка
-session_start();
-
 // Инициализировать эксперимент
 $recSegmentator = new ServerSideSegmentator('recommendations', 3);
 
 // Получить сегмент пользователя
-$segment = $regSegmentator->getSegment();
+$segment = $recSegmentator->getSegment();
 
 
 ?>
