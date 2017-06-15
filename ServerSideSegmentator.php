@@ -14,5 +14,8 @@ class ServerSideSegmentator
     var $experiment;
 
 
+    public function __construct()
+    {
 
+    }
 }
